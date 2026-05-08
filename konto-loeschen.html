@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Konto löschen – Itemshark</title>
+<style>
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; line-height: 1.6; color: #333; }
+  h1 { font-size: 1.6em; border-bottom: 2px solid #e0e0e0; padding-bottom: 8px; }
+  h2 { font-size: 1.2em; margin-top: 28px; color: #1a1a1a; }
+  p, li { font-size: 0.95em; }
+  ul, ol { padding-left: 20px; }
+  .updated { color: #666; font-size: 0.85em; }
+  .highlight { background: #f9f9f9; border-left: 4px solid #1a73e8; padding: 12px 16px; margin: 16px 0; }
+  table { border-collapse: collapse; width: 100%; margin: 16px 0; }
+  th, td { border: 1px solid #ddd; padding: 10px 14px; text-align: left; font-size: 0.95em; }
+  th { background: #f5f5f5; font-weight: 600; }
+  a { color: #1a73e8; }
+</style>
+</head>
+<body>
+
+<h1>Konto löschen – Itemshark</h1>
+<p class="updated">Stand: Mai 2026</p>
+
+<p>Auf dieser Seite erfahren Sie, wie Sie Ihr <strong>Itemshark</strong>-Konto und die zugehörigen Daten löschen können.</p>
+
+<h2>Option 1: Konto in der App löschen</h2>
+
+<ol>
+<li>Öffnen Sie die <strong>Itemshark</strong>-App auf Ihrem Android-Gerät.</li>
+<li>Tippen Sie auf das <strong>Menü</strong> (☰) und wählen Sie <strong>Einstellungen</strong>.</li>
+<li>Scrollen Sie nach unten zum Abschnitt <strong>Konto</strong>.</li>
+<li>Tippen Sie auf <strong>„Konto löschen"</strong>.</li>
+<li>Bestätigen Sie die Löschung im angezeigten Dialog.</li>
+</ol>
+
+<p>Ihr Konto und die zugehörigen serverseitigen Daten werden daraufhin gelöscht.</p>
+
+<h2>Option 2: Löschung per E-Mail anfordern</h2>
+
+<p>Wenn Sie keinen Zugang mehr zur App haben, können Sie die Löschung Ihres Kontos per E-Mail anfordern:</p>
+
+<div class="highlight">
+<strong>E-Mail an:</strong> <a href="mailto:MW_Apps@gmx.de">MW_Apps@gmx.de</a><br>
+<strong>Betreff:</strong> Konto löschen – Itemshark<br>
+<strong>Inhalt:</strong> Bitte geben Sie die E-Mail-Adresse an, mit der Sie sich in der App registriert haben.
+</div>
+
+<p>Wir bearbeiten Löschanfragen innerhalb von <strong>30 Tagen</strong>.</p>
+
+<h2>Welche Daten werden gelöscht?</h2>
+
+<table>
+<tr>
+<th>Datenart</th>
+<th>Speicherort</th>
+<th>Was passiert bei Kontolöschung?</th>
+</tr>
+<tr>
+<td>E-Mail-Adresse und Anmeldedaten</td>
+<td>Firebase Authentication (Server, EU)</td>
+<td>Wird dauerhaft gelöscht</td>
+</tr>
+<tr>
+<td>Token-Guthaben und Abonnementstatus</td>
+<td>Firebase / Google Play</td>
+<td>Wird gelöscht; aktive Abonnements müssen separat über Google Play gekündigt werden</td>
+</tr>
+<tr>
+<td>Katalogdaten (Gegenstände, Beschreibungen, Kategorien, Notizen)</td>
+<td>Lokal auf Ihrem Gerät (SQLite)</td>
+<td>Verbleiben auf dem Gerät und werden bei Deinstallation der App automatisch gelöscht</td>
+</tr>
+<tr>
+<td>Fotos Ihrer katalogisierten Gegenstände</td>
+<td>Lokal auf Ihrem Gerät</td>
+<td>Verbleiben auf dem Gerät und werden bei Deinstallation der App automatisch gelöscht</td>
+</tr>
+<tr>
+<td>KI-Scan-Fotos</td>
+<td>Werden nicht gespeichert</td>
+<td>Fotos werden nur einmalig zur Analyse übertragen und nicht auf unseren Servern gespeichert</td>
+</tr>
+</table>
+
+<h2>Wichtige Hinweise</h2>
+
+<ul>
+<li><strong>Lokale Daten:</strong> Die Löschung Ihres Kontos betrifft nur die serverseitigen Daten (Anmeldedaten, Token-Guthaben). Ihre lokal gespeicherten Katalogdaten und Fotos können Sie durch Deinstallation der App entfernen.</li>
+<li><strong>Backups:</strong> Falls Sie vor der Löschung ein Backup erstellt haben, bleiben diese Backup-Dateien auf Ihrem Gerät oder dem von Ihnen gewählten Speicherort erhalten.</li>
+<li><strong>Google Play-Abonnements:</strong> Falls Sie ein aktives Pro-Abonnement haben, kündigen Sie dieses bitte zusätzlich über den Google Play Store, da die Kontolöschung allein das Abonnement nicht automatisch beendet.</li>
+<li><strong>Unwiderruflich:</strong> Die Kontolöschung kann nicht rückgängig gemacht werden. Alle serverseitigen Daten werden dauerhaft entfernt.</li>
+</ul>
+
+<h2>Kontakt</h2>
+
+<p>Bei Fragen zur Kontolöschung oder zum Datenschutz erreichen Sie uns unter:<br>
+<strong>MW Apps</strong><br>
+E-Mail: <a href="mailto:MW_Apps@gmx.de">MW_Apps@gmx.de</a></p>
+
+<p><a href="https://mannywo.github.io/itemshark-legal/datenschutz.html">Datenschutzerklärung</a></p>
+
+</body>
+</html>

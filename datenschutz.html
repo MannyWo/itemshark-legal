@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Datenschutzerklärung – Itemshark</title>
+<style>
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; line-height: 1.6; color: #333; }
+  h1 { font-size: 1.6em; border-bottom: 2px solid #e0e0e0; padding-bottom: 8px; }
+  h2 { font-size: 1.2em; margin-top: 28px; color: #1a1a1a; }
+  p, li { font-size: 0.95em; }
+  ul { padding-left: 20px; }
+  .updated { color: #666; font-size: 0.85em; }
+</style>
+</head>
+<body>
+
+<h1>Datenschutzerklärung – Itemshark</h1>
+<p class="updated">Stand: Mai 2026</p>
+
+<p>Diese Datenschutzerklärung erläutert, welche Daten die Android-App <strong>Itemshark</strong> (nachfolgend „App") erhebt, wie sie verarbeitet werden und welche Rechte Sie als Nutzer haben.</p>
+
+<p>Verantwortlich im Sinne der DSGVO:<br>
+MW Apps<br>
+E-Mail: <a href="mailto:MW_Apps@gmx.de">MW_Apps@gmx.de</a></p>
+
+<h2>1. Welche Daten werden erhoben?</h2>
+
+<p>Die App erhebt und verarbeitet folgende Daten:</p>
+
+<p><strong>Kontodaten:</strong> Bei der Registrierung werden Ihre E-Mail-Adresse und ein Passwort erhoben. Diese werden für die Anmeldung und Kontoverwaltung benötigt.</p>
+
+<p><strong>Fotos und Kamerabilder:</strong> Die App nutzt die Gerätekamera, um Gegenstände zu fotografieren. Die Fotos werden lokal auf Ihrem Gerät gespeichert. Bei einem KI-Scan wird das Foto einmalig an unseren Server gesendet, um eine automatische Beschreibung zu erstellen (siehe Abschnitt 3).</p>
+
+<p><strong>Katalogdaten:</strong> Alle von Ihnen eingegebenen Daten (Gegenstandsbezeichnungen, Beschreibungen, Kategorien, Ablagen, Notizen, geschätzter Wert) werden ausschließlich lokal auf Ihrem Gerät in einer SQLite-Datenbank gespeichert.</p>
+
+<p><strong>Token-Guthaben und Kaufdaten:</strong> Informationen zu Ihrem Prepaid-Token-Guthaben und zum Abonnementstatus (Free/Pro) werden lokal sowie über den Google Play Billing-Dienst verwaltet.</p>
+
+<h2>2. Lokale Datenspeicherung</h2>
+
+<p>Itemshark speichert Ihre Katalogdaten, Fotos, Notizen und Einstellungen <strong>ausschließlich lokal</strong> auf Ihrem Gerät. Es findet keine fortlaufende Synchronisierung Ihrer Inhalte mit einem Cloud-Server statt. Ihre Daten verlassen Ihr Gerät nur in folgenden Fällen:</p>
+
+<ul>
+<li>Wenn Sie einen KI-Scan durchführen (siehe Abschnitt 3)</li>
+<li>Wenn Sie ein Backup manuell erstellen und teilen</li>
+<li>Wenn Sie einen CSV-Export durchführen und teilen</li>
+</ul>
+
+<h2>3. KI-gestützte Bilderkennung</h2>
+
+<p>Die App bietet eine KI-Scan-Funktion, bei der ein fotografierter Gegenstand automatisch erkannt und beschrieben wird. Dabei wird das Foto an eine serverseitige Cloud Function (gehostet auf Google Cloud/Firebase) gesendet, die das Bild an den KI-Dienst <strong>OpenAI (GPT-4o)</strong> weiterleitet.</p>
+
+<p><strong>Wichtig:</strong></p>
+<ul>
+<li>Das Foto wird ausschließlich zur einmaligen Analyse verarbeitet und nicht dauerhaft auf unseren Servern gespeichert.</li>
+<li>OpenAI verarbeitet das Bild gemäß der eigenen Datenschutzrichtlinie (<a href="https://openai.com/privacy" target="_blank">openai.com/privacy</a>). Laut OpenAI werden über die API gesendete Daten nicht zum Trainieren von KI-Modellen verwendet.</li>
+<li>Es werden keine personenbezogenen Daten zusammen mit dem Bild übertragen – lediglich das Foto selbst und die gewählte Sprache.</li>
+<li>Die Verarbeitung erfolgt auf Servern in der EU (Google Cloud, Region europe-west1).</li>
+</ul>
+
+<h2>4. Firebase-Dienste</h2>
+
+<p>Die App nutzt folgende Firebase-Dienste von Google:</p>
+
+<p><strong>Firebase Authentication:</strong> Zur Verwaltung Ihres Benutzerkontos (Registrierung, Anmeldung, Passwortzurücksetzung). Dabei werden Ihre E-Mail-Adresse, ein verschlüsseltes Passwort und technische Metadaten (z. B. Zeitpunkt der letzten Anmeldung) von Firebase gespeichert.</p>
+
+<p><strong>Firebase Cloud Functions:</strong> Serverseitige Funktionen für den KI-Scan und das Abrufen von App-Neuigkeiten. Die Verarbeitung erfolgt in der EU (europe-west1).</p>
+
+<p><strong>Firebase Firestore:</strong> Zum Abrufen von App-Neuigkeiten und Mitteilungen. Es werden dabei keine personenbezogenen Daten des Nutzers in Firestore gespeichert.</p>
+
+<p>Weitere Informationen: <a href="https://firebase.google.com/support/privacy" target="_blank">Firebase Datenschutz</a></p>
+
+<h2>5. Google Play Billing</h2>
+
+<p>Für In-App-Käufe (Token-Pakete, Pro-Upgrade) wird der Google Play Billing-Dienst genutzt. Die Zahlungsabwicklung erfolgt vollständig über Google. Wir erhalten keine Zahlungsdaten (z. B. Kreditkartennummern). Google stellt uns lediglich eine Kaufbestätigung und die Transaktions-ID bereit.</p>
+
+<h2>6. Berechtigungen</h2>
+
+<p>Die App fordert folgende Geräteberechtigungen an:</p>
+
+<ul>
+<li><strong>Kamera:</strong> Zum Fotografieren von Gegenständen für den Katalog und KI-Scan.</li>
+<li><strong>Speicher / Medien:</strong> Zum Speichern und Laden von Fotos Ihrer katalogisierten Gegenstände sowie für Backup-Import und -Export.</li>
+<li><strong>Mikrofon:</strong> Für zukünftige Spracherkennungsfunktionen, z. B. um Gegenstände per Spracheingabe zu beschreiben. Die Audioaufnahme wird ausschließlich zur Texterkennung verarbeitet und nicht dauerhaft gespeichert.</li>
+</ul>
+
+<p>Alle Berechtigungen können jederzeit in den Android-Systemeinstellungen widerrufen werden.</p>
+
+<h2>7. Backup und Export</h2>
+
+<p>Sie können jederzeit ein vollständiges Backup Ihrer Daten erstellen (als .itemsharkbackup-Datei) oder einen CSV-Export durchführen. Diese Dateien werden lokal auf Ihrem Gerät erstellt. Wenn Sie die Teilen-Funktion nutzen, verlassen die Daten Ihr Gerät über den von Ihnen gewählten Kanal (z. B. E-Mail, Cloud-Speicher). Dies geschieht ausschließlich auf Ihre Initiative.</p>
+
+<h2>8. Datenweitergabe an Dritte</h2>
+
+<p>Wir geben Ihre personenbezogenen Daten nicht an Dritte weiter, mit Ausnahme der in dieser Erklärung genannten Dienste (Firebase/Google, OpenAI) und nur im beschriebenen Umfang. Es erfolgt kein Verkauf von Daten, keine Werbung und kein Tracking.</p>
+
+<h2>9. Datensicherheit</h2>
+
+<p>Alle Datenübertragungen zwischen der App und unseren Servern erfolgen verschlüsselt (HTTPS/TLS). API-Schlüssel für den KI-Dienst sind ausschließlich serverseitig gespeichert und für die App nicht einsehbar. Ihre lokale Datenbank wird unverschlüsselt auf dem Gerät gespeichert – der Schutz erfolgt durch die Gerätesicherheit (Bildschirmsperre, Verschlüsselung des Dateisystems).</p>
+
+<h2>10. Ihre Rechte</h2>
+
+<p>Gemäß DSGVO haben Sie folgende Rechte:</p>
+
+<ul>
+<li><strong>Auskunft:</strong> Sie können jederzeit erfahren, welche Daten über Sie gespeichert sind.</li>
+<li><strong>Löschung:</strong> Sie können Ihr Konto und alle zugehörigen Daten löschen lassen. Lokale Daten können Sie jederzeit durch Deinstallation der App entfernen.</li>
+<li><strong>Berichtigung:</strong> Sie können die Berichtigung unrichtiger Daten verlangen.</li>
+<li><strong>Datenübertragbarkeit:</strong> Sie können Ihre Daten jederzeit über die Backup- und Export-Funktion der App exportieren.</li>
+<li><strong>Widerspruch:</strong> Sie können der Verarbeitung Ihrer Daten jederzeit widersprechen.</li>
+<li><strong>Beschwerde:</strong> Sie haben das Recht, sich bei einer Datenschutz-Aufsichtsbehörde zu beschweren.</li>
+</ul>
+
+<p>Zur Ausübung Ihrer Rechte kontaktieren Sie uns unter: <a href="mailto:MW_Apps@gmx.de">MW_Apps@gmx.de</a></p>
+
+<h2>11. Datenübermittlung in Drittländer</h2>
+
+<p>Die KI-Analyse über OpenAI kann eine Datenübermittlung in die USA beinhalten. OpenAI unterliegt den Standardvertragsklauseln der EU und dem EU-US Data Privacy Framework. Die Firebase-Dienste (Authentication, Cloud Functions, Firestore) werden in der EU-Region europe-west1 betrieben.</p>
+
+<h2>12. Aufbewahrung und Löschung</h2>
+
+<p>Lokale Daten werden bei Deinstallation der App automatisch gelöscht. Ihr Firebase-Konto (E-Mail, Anmeldedaten) bleibt bestehen, bis Sie es über die In-App-Funktion „Konto löschen" oder per E-Mail an MW_Apps@gmx.de löschen lassen. Fotos, die im Rahmen eines KI-Scans verarbeitet werden, werden nach der Analyse nicht auf unseren Servern gespeichert.</p>
+
+<h2>13. Änderungen dieser Datenschutzerklärung</h2>
+
+<p>Wir behalten uns vor, diese Datenschutzerklärung anzupassen, um sie a
