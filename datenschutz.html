@@ -18,7 +18,7 @@
 <h1>Datenschutzerklärung – Itemshark</h1>
 <p class="updated">Stand: Mai 2026</p>
 
-<p>Diese Datenschutzerklärung erläutert, welche Daten die Android-App <strong>Itemshark</strong> (nachfolgend „App") erhebt, wie sie verarbeitet werden und welche Rechte Sie als Nutzer haben.</p>
+<p>Diese Datenschutzerklärung erläutert, welche Daten die Android-App <strong>Itemshark</strong> (nachfolgend „App“) erhebt, wie sie verarbeitet werden und welche Rechte Sie als Nutzer haben.</p>
 
 <p>Verantwortlich im Sinne der DSGVO:<br>
 MW Apps<br>
@@ -48,14 +48,14 @@ E-Mail: <a href="mailto:MW_Apps@gmx.de">MW_Apps@gmx.de</a></p>
 
 <h2>3. KI-gestützte Bilderkennung</h2>
 
-<p>Die App bietet eine KI-Scan-Funktion, bei der ein fotografierter Gegenstand automatisch erkannt und beschrieben wird. Dabei wird das Foto an eine serverseitige Cloud Function (gehostet auf Google Cloud/Firebase) gesendet, die das Bild an den KI-Dienst <strong>OpenAI (GPT-4o)</strong> weiterleitet.</p>
+<p>Die App bietet eine KI-Scan-Funktion, bei der ein fotografierter Gegenstand automatisch erkannt und beschrieben wird. Dabei wird das Foto an eine serverseitige Cloud Function (gehostet auf Google Cloud/Firebase) gesendet, die das Bild an einen externen KI-Dienst weiterleitet. Derzeit werden folgende KI-Dienste eingesetzt: <strong>Google Gemini</strong> und <strong>OpenAI</strong>. Der verwendete Dienst kann sich ändern, ohne dass eine Nutzeraktion erforderlich ist.</p>
 
 <p><strong>Wichtig:</strong></p>
 <ul>
 <li>Das Foto wird ausschließlich zur einmaligen Analyse verarbeitet und nicht dauerhaft auf unseren Servern gespeichert.</li>
-<li>OpenAI verarbeitet das Bild gemäß der eigenen Datenschutzrichtlinie (<a href="https://openai.com/privacy" target="_blank">openai.com/privacy</a>). Laut OpenAI werden über die API gesendete Daten nicht zum Trainieren von KI-Modellen verwendet.</li>
+<li>Die eingesetzten KI-Dienste verarbeiten das Bild gemäß ihrer jeweiligen Datenschutzrichtlinien: <a href="https://policies.google.com/privacy" target="_blank">Google Datenschutz</a>, <a href="https://openai.com/privacy" target="_blank">OpenAI Datenschutz</a>. Laut Angaben beider Anbieter werden über die API gesendete Daten nicht zum Trainieren von KI-Modellen verwendet.</li>
 <li>Es werden keine personenbezogenen Daten zusammen mit dem Bild übertragen – lediglich das Foto selbst und die gewählte Sprache.</li>
-<li>Die Verarbeitung erfolgt auf Servern in der EU (Google Cloud, Region europe-west1).</li>
+<li>Die serverseitige Verarbeitung (Cloud Function) erfolgt in der EU (Google Cloud, Region europe-west1). Die Weiterleitung an den KI-Dienst kann je nach Anbieter eine Verarbeitung außerhalb der EU beinhalten (siehe Abschnitt 11).</li>
 </ul>
 
 <h2>4. Firebase-Dienste</h2>
@@ -92,7 +92,7 @@ E-Mail: <a href="mailto:MW_Apps@gmx.de">MW_Apps@gmx.de</a></p>
 
 <h2>8. Datenweitergabe an Dritte</h2>
 
-<p>Wir geben Ihre personenbezogenen Daten nicht an Dritte weiter, mit Ausnahme der in dieser Erklärung genannten Dienste (Firebase/Google, OpenAI) und nur im beschriebenen Umfang. Es erfolgt kein Verkauf von Daten, keine Werbung und kein Tracking.</p>
+<p>Wir geben Ihre personenbezogenen Daten nicht an Dritte weiter, mit Ausnahme der in dieser Erklärung genannten Dienste (Firebase/Google, Google Gemini, OpenAI) und nur im beschriebenen Umfang. Es erfolgt kein Verkauf von Daten, keine Werbung und kein Tracking.</p>
 
 <h2>9. Datensicherheit</h2>
 
@@ -115,12 +115,20 @@ E-Mail: <a href="mailto:MW_Apps@gmx.de">MW_Apps@gmx.de</a></p>
 
 <h2>11. Datenübermittlung in Drittländer</h2>
 
-<p>Die KI-Analyse über OpenAI kann eine Datenübermittlung in die USA beinhalten. OpenAI unterliegt den Standardvertragsklauseln der EU und dem EU-US Data Privacy Framework. Die Firebase-Dienste (Authentication, Cloud Functions, Firestore) werden in der EU-Region europe-west1 betrieben.</p>
+<p>Die KI-Analyse über die eingesetzten Dienste (Google Gemini, OpenAI) kann eine Datenübermittlung in die USA beinhalten. Beide Anbieter unterliegen den Standardvertragsklauseln der EU und dem EU-US Data Privacy Framework. Google verarbeitet Gemini-API-Anfragen gemäß den Google Cloud Datenschutzbedingungen. Die Firebase-Dienste (Authentication, Cloud Functions, Firestore) werden in der EU-Region europe-west1 betrieben.</p>
 
 <h2>12. Aufbewahrung und Löschung</h2>
 
-<p>Lokale Daten werden bei Deinstallation der App automatisch gelöscht. Ihr Firebase-Konto (E-Mail, Anmeldedaten) bleibt bestehen, bis Sie es über die In-App-Funktion „Konto löschen" oder per E-Mail an MW_Apps@gmx.de löschen lassen. Fotos, die im Rahmen eines KI-Scans verarbeitet werden, werden nach der Analyse nicht auf unseren Servern gespeichert.</p>
+<p>Lokale Daten werden bei Deinstallation der App automatisch gelöscht. Ihr Firebase-Konto (E-Mail, Anmeldedaten) bleibt bestehen, bis Sie es über die In-App-Funktion „Konto löschen“ oder per E-Mail an MW_Apps@gmx.de löschen lassen. Fotos, die im Rahmen eines KI-Scans verarbeitet werden, werden nach der Analyse nicht auf unseren Servern gespeichert.</p>
 
 <h2>13. Änderungen dieser Datenschutzerklärung</h2>
 
-<p>Wir behalten uns vor, diese Datenschutzerklärung anzupassen, um sie a
+<p>Wir behalten uns vor, diese Datenschutzerklärung anzupassen, um sie an geänderte Rechtslage oder bei Änderungen der App anzupassen. Die aktuelle Version ist stets über die App und den Google Play Store abrufbar.</p>
+
+<h2>14. Kontakt</h2>
+
+<p>Bei Fragen zum Datenschutz erreichen Sie uns unter:<br>
+E-Mail: <a href="mailto:MW_Apps@gmx.de">MW_Apps@gmx.de</a></p>
+
+</body>
+</html>
