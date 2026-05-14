@@ -18,7 +18,7 @@
 <h1>Datenschutzerklärung – Itemshark</h1>
 <p class="updated">Stand: Mai 2026</p>
 
-<p>Diese Datenschutzerklärung erläutert, welche Daten die Android-App <strong>Itemshark</strong> (nachfolgend „App“) erhebt, wie sie verarbeitet werden und welche Rechte Sie als Nutzer haben.</p>
+<p>Diese Datenschutzerklärung erläutert, welche Daten die App <strong>Itemshark</strong> für Android und iOS (nachfolgend „App“) erhebt, wie sie verarbeitet werden und welche Rechte Sie als Nutzer haben.</p>
 
 <p>Verantwortlich im Sinne der DSGVO:<br>
 MW Apps<br>
@@ -28,13 +28,13 @@ E-Mail: <a href="mailto:MW_Apps@gmx.de">MW_Apps@gmx.de</a></p>
 
 <p>Die App erhebt und verarbeitet folgende Daten:</p>
 
-<p><strong>Kontodaten:</strong> Bei der Registrierung werden Ihre E-Mail-Adresse und ein Passwort erhoben. Diese werden für die Anmeldung und Kontoverwaltung benötigt.</p>
+<p><strong>Kontodaten:</strong> Bei der Registrierung werden Ihre E-Mail-Adresse und ein Passwort erhoben. Diese werden für die Anmeldung und Kontoverwaltung benötigt. Die Anmeldung erfolgt über Firebase Authentication.</p>
 
-<p><strong>Fotos und Kamerabilder:</strong> Die App nutzt die Gerätekamera, um Gegenstände zu fotografieren. Die Fotos werden lokal auf Ihrem Gerät gespeichert. Bei einem KI-Scan wird das Foto einmalig an unseren Server gesendet, um eine automatische Beschreibung zu erstellen (siehe Abschnitt 3).</p>
+<p><strong>Fotos und Kamerabilder:</strong> Die App nutzt die Gerätekamera oder die Fotomediathek, um Gegenstände zu fotografieren oder vorhandene Bilder auszuwählen. Die Fotos werden lokal auf Ihrem Gerät gespeichert. Bei einem KI-Scan wird das ausgewählte Foto einmalig an unsere serverseitige Cloud Function gesendet, um eine automatische Beschreibung zu erstellen (siehe Abschnitt 3).</p>
 
 <p><strong>Katalogdaten:</strong> Alle von Ihnen eingegebenen Daten (Gegenstandsbezeichnungen, Beschreibungen, Kategorien, Ablagen, Notizen, geschätzter Wert) werden ausschließlich lokal auf Ihrem Gerät in einer SQLite-Datenbank gespeichert.</p>
 
-<p><strong>Token-Guthaben und Kaufdaten:</strong> Informationen zu Ihrem Prepaid-Token-Guthaben und zum Abonnementstatus (Free/Pro) werden lokal sowie über den Google Play Billing-Dienst verwaltet.</p>
+<p><strong>Token-Guthaben, Scan-Abbuchungen und Kaufdaten:</strong> Informationen zu Ihrem Prepaid-Token-Guthaben, serverseitigen Scan-Abbuchungen und zum Pro-Status werden über Firebase verwaltet. In-App-Käufe werden je nach Plattform über Google Play Billing oder Apple In-App Purchase abgewickelt.</p>
 
 <h2>2. Lokale Datenspeicherung</h2>
 
@@ -54,7 +54,7 @@ E-Mail: <a href="mailto:MW_Apps@gmx.de">MW_Apps@gmx.de</a></p>
 <ul>
 <li>Das Foto wird ausschließlich zur einmaligen Analyse verarbeitet und nicht dauerhaft auf unseren Servern gespeichert.</li>
 <li>Die eingesetzten KI-Dienste verarbeiten das Bild gemäß ihrer jeweiligen Datenschutzrichtlinien: <a href="https://policies.google.com/privacy" target="_blank">Google Datenschutz</a>, <a href="https://openai.com/privacy" target="_blank">OpenAI Datenschutz</a>. Laut Angaben beider Anbieter werden über die API gesendete Daten nicht zum Trainieren von KI-Modellen verwendet.</li>
-<li>Es werden keine personenbezogenen Daten zusammen mit dem Bild übertragen – lediglich das Foto selbst und die gewählte Sprache.</li>
+<li>Der KI-Dienst erhält das Foto sowie die für die Analyse nötigen Angaben, zum Beispiel Sprache, markierte Bereiche oder Analyseanweisungen. Die Zuordnung zum Nutzerkonto, Tokenprüfung und Scan-Abbuchung erfolgen in unserer Cloud Function/Firebase-Umgebung.</li>
 <li>Die serverseitige Verarbeitung (Cloud Function) erfolgt in der EU (Google Cloud, Region europe-west1). Die Weiterleitung an den KI-Dienst kann je nach Anbieter eine Verarbeitung außerhalb der EU beinhalten (siehe Abschnitt 11).</li>
 </ul>
 
@@ -64,15 +64,15 @@ E-Mail: <a href="mailto:MW_Apps@gmx.de">MW_Apps@gmx.de</a></p>
 
 <p><strong>Firebase Authentication:</strong> Zur Verwaltung Ihres Benutzerkontos (Registrierung, Anmeldung, Passwortzurücksetzung). Dabei werden Ihre E-Mail-Adresse, ein verschlüsseltes Passwort und technische Metadaten (z. B. Zeitpunkt der letzten Anmeldung) von Firebase gespeichert.</p>
 
-<p><strong>Firebase Cloud Functions:</strong> Serverseitige Funktionen für den KI-Scan und das Abrufen von App-Neuigkeiten. Die Verarbeitung erfolgt in der EU (europe-west1).</p>
+<p><strong>Firebase Cloud Functions:</strong> Serverseitige Funktionen für den KI-Scan, Tokenprüfung, Token-Abbuchung, Konto-Löschung und das Abrufen von App-Neuigkeiten. Die Verarbeitung erfolgt in der EU (europe-west1).</p>
 
-<p><strong>Firebase Firestore:</strong> Zum Abrufen von App-Neuigkeiten und Mitteilungen. Es werden dabei keine personenbezogenen Daten des Nutzers in Firestore gespeichert.</p>
+<p><strong>Firebase Firestore:</strong> Zum Speichern von Token-Guthaben, Scan-Abbuchungsereignissen und App-Neuigkeiten. Token- und Scan-Daten können mit Ihrer Firebase-Nutzer-ID und E-Mail-Adresse verknüpft sein, damit Tokens korrekt abgerechnet und Missbrauch verhindert werden können. Ihre lokalen Katalogdaten, Boxen, Notizen und lokal gespeicherten Fotos werden nicht automatisch in Firestore synchronisiert.</p>
 
 <p>Weitere Informationen: <a href="https://firebase.google.com/support/privacy" target="_blank">Firebase Datenschutz</a></p>
 
-<h2>5. Google Play Billing</h2>
+<h2>5. In-App-Käufe über Google Play und Apple</h2>
 
-<p>Für In-App-Käufe (Token-Pakete, Pro-Upgrade) wird der Google Play Billing-Dienst genutzt. Die Zahlungsabwicklung erfolgt vollständig über Google. Wir erhalten keine Zahlungsdaten (z. B. Kreditkartennummern). Google stellt uns lediglich eine Kaufbestätigung und die Transaktions-ID bereit.</p>
+<p>Für In-App-Käufe (Token-Pakete, Pro-Upgrade) wird je nach Plattform Google Play Billing oder Apple In-App Purchase genutzt. Die Zahlungsabwicklung erfolgt vollständig über Google bzw. Apple. Wir erhalten keine vollständigen Zahlungsdaten wie Kreditkartennummern. Zur Freischaltung und Verwaltung können uns der jeweilige Store technische Kaufbestätigungen, Produkt-IDs, Transaktionsdaten und Kaufstatus bereitstellen.</p>
 
 <h2>6. Berechtigungen</h2>
 
@@ -80,11 +80,12 @@ E-Mail: <a href="mailto:MW_Apps@gmx.de">MW_Apps@gmx.de</a></p>
 
 <ul>
 <li><strong>Kamera:</strong> Zum Fotografieren von Gegenständen für den Katalog und KI-Scan.</li>
-<li><strong>Speicher / Medien:</strong> Zum Speichern und Laden von Fotos Ihrer katalogisierten Gegenstände sowie für Backup-Import und -Export.</li>
-<li><strong>Mikrofon:</strong> Für zukünftige Spracherkennungsfunktionen, z. B. um Gegenstände per Spracheingabe zu beschreiben. Die Audioaufnahme wird ausschließlich zur Texterkennung verarbeitet und nicht dauerhaft gespeichert.</li>
+<li><strong>Fotos / Medien:</strong> Zum Auswählen vorhandener Bilder, Speichern und Laden von Fotos Ihrer katalogisierten Gegenstände sowie für Backup-Import und -Export.</li>
+<li><strong>Dateien / Teilen:</strong> Zum Erstellen, Importieren und Teilen von Backup- und Exportdateien.</li>
+<li><strong>Mikrofon:</strong> Wird aktuell nicht angefordert und nicht genutzt. Sollte künftig eine Spracherkennungsfunktion ergänzt werden, wird diese Datenschutzerklärung entsprechend aktualisiert.</li>
 </ul>
 
-<p>Alle Berechtigungen können jederzeit in den Android-Systemeinstellungen widerrufen werden.</p>
+<p>Alle Berechtigungen können jederzeit in den Android- oder iOS-Systemeinstellungen widerrufen werden.</p>
 
 <h2>7. Backup und Export</h2>
 
@@ -115,15 +116,15 @@ E-Mail: <a href="mailto:MW_Apps@gmx.de">MW_Apps@gmx.de</a></p>
 
 <h2>11. Datenübermittlung in Drittländer</h2>
 
-<p>Die KI-Analyse über die eingesetzten Dienste (Google Gemini, OpenAI) kann eine Datenübermittlung in die USA beinhalten. Beide Anbieter unterliegen den Standardvertragsklauseln der EU und dem EU-US Data Privacy Framework. Google verarbeitet Gemini-API-Anfragen gemäß den Google Cloud Datenschutzbedingungen. Die Firebase-Dienste (Authentication, Cloud Functions, Firestore) werden in der EU-Region europe-west1 betrieben.</p>
+<p>Die KI-Analyse über die eingesetzten Dienste (Google Gemini, OpenAI) kann eine Datenübermittlung in die USA oder andere Drittländer beinhalten. Die Anbieter setzen nach eigenen Angaben geeignete Datenschutzmechanismen wie Standardvertragsklauseln und/oder das EU-US Data Privacy Framework ein. Google verarbeitet Gemini-API-Anfragen gemäß den Google Cloud Datenschutzbedingungen. Die Firebase Cloud Functions und Firestore-Datenbank werden in der EU-Region europe-west1 betrieben. Firebase Authentication kann technische Authentifizierungsdaten nach den Bedingungen von Google/Firebase verarbeiten.</p>
 
 <h2>12. Aufbewahrung und Löschung</h2>
 
-<p>Lokale Daten werden bei Deinstallation der App automatisch gelöscht. Ihr Firebase-Konto (E-Mail, Anmeldedaten) bleibt bestehen, bis Sie es über die In-App-Funktion „Konto löschen“ oder per E-Mail an MW_Apps@gmx.de löschen lassen. Fotos, die im Rahmen eines KI-Scans verarbeitet werden, werden nach der Analyse nicht auf unseren Servern gespeichert.</p>
+<p>Lokale Daten werden bei Deinstallation der App grundsätzlich vom Gerät entfernt, sofern sie nicht zuvor als Backup oder Export an einem anderen Ort gespeichert wurden. Ihr Firebase-Konto (E-Mail, Anmeldedaten) und serverseitige Token-/Scan-Daten bleiben bestehen, bis Sie das Konto über die In-App-Funktion „Konto löschen“ oder per E-Mail an MW_Apps@gmx.de löschen lassen. Fotos, die im Rahmen eines KI-Scans verarbeitet werden, werden nach der Analyse nicht dauerhaft auf unseren Servern gespeichert.</p>
 
 <h2>13. Änderungen dieser Datenschutzerklärung</h2>
 
-<p>Wir behalten uns vor, diese Datenschutzerklärung anzupassen, um sie an geänderte Rechtslage oder bei Änderungen der App anzupassen. Die aktuelle Version ist stets über die App und den Google Play Store abrufbar.</p>
+<p>Wir behalten uns vor, diese Datenschutzerklärung anzupassen, um sie an geänderte Rechtslage oder bei Änderungen der App anzupassen. Die aktuelle Version ist stets über die App sowie über die Store-Einträge bei Google Play und im Apple App Store abrufbar.</p>
 
 <h2>14. Kontakt</h2>
 
