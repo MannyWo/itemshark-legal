@@ -16,7 +16,7 @@
 <body>
 
 <h1>Datenschutzerklärung – Itemshark</h1>
-<p class="updated">Stand: Mai 2026</p>
+<p class="updated">Stand: Juli 2026</p>
 
 <p>Diese Datenschutzerklärung erläutert, welche Daten die App <strong>Itemshark</strong> für Android und iOS (nachfolgend „App“) erhebt, wie sie verarbeitet werden und welche Rechte Sie als Nutzer haben.</p>
 
@@ -67,6 +67,10 @@ E-Mail: <a href="mailto:MW_Apps@gmx.de">MW_Apps@gmx.de</a></p>
 <p><strong>Firebase Cloud Functions:</strong> Serverseitige Funktionen für den KI-Scan, Tokenprüfung, Token-Abbuchung, Konto-Löschung und das Abrufen von App-Neuigkeiten. Die Verarbeitung erfolgt in der EU (europe-west1).</p>
 
 <p><strong>Firebase Firestore:</strong> Zum Speichern von Token-Guthaben, Scan-Abbuchungsereignissen und App-Neuigkeiten. Token- und Scan-Daten können mit Ihrer Firebase-Nutzer-ID und E-Mail-Adresse verknüpft sein, damit Tokens korrekt abgerechnet und Missbrauch verhindert werden können. Ihre lokalen Katalogdaten, Boxen, Notizen und lokal gespeicherten Fotos werden nicht automatisch in Firestore synchronisiert.</p>
+
+<p><strong>Firebase Crashlytics:</strong> Zur Stabilitätsanalyse erfasst die App bei Abstürzen und schweren Fehlern automatisch Diagnosedaten (z. B. Absturzberichte, Fehlermeldungen, Gerätemodell, Betriebssystemversion und eine zufällige Installations-Kennung). Diese Daten helfen uns, Fehler zu erkennen und zu beheben. Sie sind nicht mit Ihrem Namen verknüpft und werden nicht für Werbung genutzt.</p>
+
+<p><strong>Firebase App Check:</strong> Zum Schutz unserer serverseitigen Dienste vor Missbrauch prüft die App vor serverseitigen Anfragen die Echtheit der App-Installation. Dabei wird über den Geräte-Integritätsdienst der Plattform (Play Integrity auf Android bzw. App Attest auf iOS) ein Prüf-Token erzeugt und an Google/Apple sowie an unsere Firebase-Umgebung übermittelt. Katalog- oder Kontoinhalte werden dabei nicht übertragen.</p>
 
 <p>Weitere Informationen: <a href="https://firebase.google.com/support/privacy" target="_blank">Firebase Datenschutz</a></p>
 
